@@ -20,16 +20,19 @@
       <img src="imgs/title.png">
     </div>
 
+
+
+    <div oncontextmenu="return false;" id="viewerContext"></div> <!-- avoiding popup when right mouse is clicked -->
+
     <div id="errordiv"></div>
 
     <div id="editFrame">
       <div id="editor">//!OpenSCAD
 cube([10, 10, 10]);
       </div>
-    </div> <!-- editor -->
+    </div>
 
-<!-- design viewer -->
-    <div oncontextmenu="return false;" id="viewerContext"></div> <!-- avoiding popup when right mouse is clicked -->
+
 
 <!-- MOBILE NOT SUPPORTED YET: design parameters -->
     <div id="parametersdiv"></div>

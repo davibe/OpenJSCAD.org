@@ -22,7 +22,7 @@ function AlertUserOfUncaughtExceptions () {
     if (typeof document == 'object') {
       var e = document.getElementById('errordiv')
       if (e !== null) {
-        e.firstChild.textContent = msg
+        e.firstChild.textContent = msg.trim()
         e.style.display = 'block'
       }
     } else {

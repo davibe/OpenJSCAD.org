@@ -72,6 +72,23 @@ function setUpEditor (divname, gProcessor) {
       gProcessor.setJsCad(src)
     }
   }
+  // load last saved content
+  function contentLoadFromLocalStorage() {
+    var src = localStorage.editorContent
+    src && src.length ? gEditor.setValue(src, 1) : null
+    gEditor.commands.exec('setJSCAD', editor)
+    gProcessor.setStatus('loaded', 'Loaded source from browser storage')
+  }
+  contentLoadFromLocalStorage();
+  function contentSaveToLocalStorage() {
+    var src = gEditor.getValue()
+    localStorage.editorContent = src
+    //gProcessor.setStatus('saved', 'Saved source to browser storage')
+  }
+  setInterval(() => {
+    runExec(gEditor)
+    contentSaveToLocalStorage();
+  }, 1000)
   // enable special keystrokes
   gEditor.commands.addCommand({
     name: 'setJSCAD',
@@ -105,7 +122,7 @@ function setUpEditor (divname, gProcessor) {
   })
   gEditor.commands.addCommand({
     name: 'loadSource',
-    bindKey: { win: 'Ctrl-L', mac: 'Command-L' },
+    bindKey: { win: 'Ctrl-L', mac: 'Command-A' },
     exec: function (editor) {
       var src = localStorage.editorContent
       src && src.length ? editor.setValue(src, 1) : null

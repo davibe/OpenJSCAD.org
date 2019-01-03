@@ -2,7 +2,8 @@
  *    few changes made by Rene K. Mueller for OpenSCAD.org
  */
 
-html, body {
+html,
+body {
   display: flex;
   height: 100%;
   min-height: 100%;
@@ -40,8 +41,13 @@ html, body {
 }
 
 #errordiv {
-  background-color: red;
-  flex: 0.1;
+  background-color: #fea;
+  flex: 0;
+}
+
+#errordiv > pre {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 #filedropzone,
