@@ -102076,9 +102076,6 @@ function setUpEditor(divname, gProcessor) {
     bindKey: { win: 'F5|Shift-Return', mac: 'F5|Shift-Return' },
     exec: runExec
   });
-  setInterval(function() {
-		runExec(gEditor);
-}, 1000);
   document.body.addEventListener('keydown', function (evt) {
     if (evt.key === 'F5') {
       evt.preventDefault();
