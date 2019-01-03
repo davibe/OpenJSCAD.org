@@ -78,7 +78,7 @@ function init () {
       menuHandle.style.top = '45%'
     }
     if (editFrame) {
-      setElementHeight(editFrame, window.innerHeight + 'px')
+      //setElementHeight(editFrame, window.innerHeight + 'px')
     }
   })
 
@@ -164,10 +164,10 @@ function init () {
     let editHandle = document.getElementById('editHandle')
     editHandle.addEventListener('click', function (e) {
       if (getElementWidth(editFrame) === 0) {
-        setElementWidth(editFrame, '40%')
+        //setElementWidth(editFrame, '40%')
         editHandle.src = 'imgs/editHandleIn.png'
       } else {
-        setElementWidth(editFrame, '0px')
+        //setElementWidth(editFrame, '0px')
         editHandle.src = 'imgs/editHandleOut.png'
       }
     })
